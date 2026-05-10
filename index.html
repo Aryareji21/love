@@ -31,26 +31,28 @@
             cursor: pointer;
         }
 
-        /* 💌 Message Style */
+        /* 💌 Center Message */
         .message {
             position: fixed;
-            bottom: 50px;
-            width: 100%;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, 30px);
+
             text-align: center;
             color: #ff4d6d;
-            font-size: 30px;
+            font-size: 32px;
 
             opacity: 0;
-            transform: translateY(30px);
             transition: all 2s ease;
 
             z-index: 999;
             text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa;
+            width: 90%;
         }
 
         .message.show {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
@@ -66,11 +68,6 @@
 <audio id="audios" preload="auto" loop>
     <source src="MP3/new.wav" type="audio/mpeg">
 </audio>
-
-<!-- 🎤 Voice Message -->
-<!-- <audio id="voice" preload="auto">
-    <source src="MP3/new.wav" type="audio/mpeg">
-</audio> -->
 
 <!-- 💖 Heart Animation -->
 <div class="container" onselectstart="return false;" unselectable="on" style="-moz-user-select:none;">
@@ -97,11 +94,11 @@
     </div>
 </div>
 
-<!-- 💌 Message -->
+<!-- 💌 Romantic Message -->
 <div class="message" id="msg">
    Happy Birthday Ammu 🎉 <br>
-I love you more than words can ever express ❤️  <br>
-You are not just my love, you are my happiness, my peace, and the most beautiful part of my life 💖
+   I love you more than words can ever express ❤️ <br>
+   You are not just my love, you are my happiness, my peace, and the most beautiful part of my life 💖
 </div>
 
 <!-- Animation Script -->
@@ -116,14 +113,10 @@ function startExperience() {
     // Play background music
     document.getElementById("audios").play();
 
-    // After animation time
+    // Show message after animation
     setTimeout(function() {
-        // Show message with animation
         document.getElementById("msg").classList.add("show");
-
-        // 🎤 Play voice
-        document.getElementById("voice").play();
-    }, 20000); // adjust timing if needed
+    }, 20000); // you can reduce to 10000 if faster
 }
 </script>
 
